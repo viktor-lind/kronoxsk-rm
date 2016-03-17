@@ -35,21 +35,7 @@ public class Bokningar {
             doc.getDocumentElement().normalize();
             System.out.println ("Root element: " + 
                         doc.getDocumentElement().getNodeName());
-            NodeList items2 = doc.getElementsByTagName("bokadeDatum");
-            
-            for (int t = 0; t < items2.getLength(); t++)
-            {
-                Node n1 = items2.item(t);
-                if (n1.getNodeType() == Node.ELEMENT_NODE) {
-
-        			Element eElement = (Element) n1;
-        			Node node3 = eElement.getFirstChild();
-        			Node node4 = node3.getAttributes().getNamedItem("startTid");
-        			Node node5 = node3.getAttributes().getNamedItem("slutTid");
-        			System.out.println(node4.getNodeValue() + " -  " + node5.getNodeValue());
-        			
-                }
-         
+       
             NodeList items = doc.getElementsByTagName("resursNod");
             
             for (int i = 0; i < items.getLength(); i++)
@@ -167,7 +153,6 @@ public class Bokningar {
                 /**System.out.println("number of nodes: " + test1);*/
                
         }
-        }
     
         
         catch (Exception e)
@@ -175,9 +160,9 @@ public class Bokningar {
             e.printStackTrace();
         }
         
-        /**for(int g = 0; g < listy.size(); g++){
+        for(int g = 0; g < listy.size(); g++){
       	  System.out.println(listy.get(g).toString());
-        }*/
+        }
 }
 	
 }
